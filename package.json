@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "migrate": "node migrations/migrate.js"
   },
   "repository": {
     "type": "git",

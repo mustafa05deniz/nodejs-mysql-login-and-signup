@@ -1,5 +1,7 @@
 # nodejs-mysql-login-and-signup
-nodejs and mysql login and signup project 
+
+nodejs and mysql login and signup project
+
 <h2>install</h2>
 
 <h3>config/database.js</h3>
@@ -16,8 +18,9 @@ module.exports = {
 };
 </pre>
 
-
 <pre>npm install </pre>
+<pre>npm run migrate</pre>
+
 <pre>node server.js</pre>
 
 <h2>How is running</h2>
@@ -38,7 +41,7 @@ passport.use(
 
             usernameField : 'username',
             passwordField : 'password',
-            passReqToCallback : true 
+            passReqToCallback : true
         },
         function(req, username, password, done) {
 
@@ -64,7 +67,9 @@ passport.use(
                 }
             });
         })
- );
+
+);
+
 </pre>
 <h4>Sign in</h4>
 <pre>
@@ -84,13 +89,13 @@ passport.use(
                     return done(null, false, req.flash('loginMessage', 'bulunamadi.')); 
                 }
 
-           
                 if (!bcrypt.compareSync(password, rows[0].password))
                     return done(null, false, req.flash('loginMessage', 'yanlis parola.'));
 
-          
+
                 return done(null, rows[0]);
             });
         })
     );
+
 </pre>
